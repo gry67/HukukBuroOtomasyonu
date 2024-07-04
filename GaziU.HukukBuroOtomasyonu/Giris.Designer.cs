@@ -75,6 +75,7 @@
             girisBtn.TabIndex = 4;
             girisBtn.Text = "Giriş";
             girisBtn.UseVisualStyleBackColor = true;
+            girisBtn.Click += girisBtn_Click;
             // 
             // Giris
             // 

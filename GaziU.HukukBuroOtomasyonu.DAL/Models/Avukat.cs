@@ -9,7 +9,7 @@ namespace GaziU.HukukBuroOtomasyonu.DAL.Models
     public class Avukat : BaseEntity
     {
         public string Adi { get; set; }
-        public int TcKimlikNo { get; set; }
+        public Int64 TcKimlikNo { get; set; }
         public string Sifre { get; set; }
     }
 }

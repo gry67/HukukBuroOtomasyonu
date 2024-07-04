@@ -9,8 +9,6 @@ namespace GaziU.HukukBuroOtomasyonu.DAL.Models
     public class YargiTuru : BaseEntity
     {
         public string YargiTuruAdi { get; set; }
-
-
-        public ICollection<YargiTuruMahkeme> YargiTuruMahkemeler { get; set; }
+        public ICollection<Mahkeme> mahkemeler { get; set; }
     }
 }

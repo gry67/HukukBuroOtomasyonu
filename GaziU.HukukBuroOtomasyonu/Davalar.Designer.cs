@@ -28,18 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            davalarList = new ListView();
             SuspendLayout();
+            // 
+            // davalarList
+            // 
+            davalarList.FullRowSelect = true;
+            davalarList.Location = new Point(12, 154);
+            davalarList.Name = "davalarList";
+            davalarList.Size = new Size(981, 357);
+            davalarList.TabIndex = 0;
+            davalarList.UseCompatibleStateImageBehavior = false;
+            davalarList.View = View.Details;
+            davalarList.SelectedIndexChanged += davalarList_SelectedIndexChanged;
             // 
             // Davalar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1005, 558);
+            Controls.Add(davalarList);
             Name = "Davalar";
             Text = "Davalar";
+            Load += Davalar_Load;
             ResumeLayout(false);
         }
 
         #endregion
+
+        private ListView davalarList;
     }
 }

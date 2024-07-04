@@ -17,21 +17,21 @@ namespace GaziU.HukukBuroOtomasyonu.DAL.Models
         public string DosyaDurumu { get; set; }
         public string Davaci { get; set; }
         public string Davali { get; set; }
-        public string DosyaNotu { get; set; }
+        public string? DosyaNotu { get; set; }
 
         //Fiziksel arşivden bulunabilmesi için
         public int DosyaNumarasi { get; set; }
         public string DavaKonusu { get; set; }
 
 
-        public double IcraTutari { get; set; }
-        public double IcraTakipKonusu { get; set; }
+        public double? IcraTutari { get; set; }
+        public string? IcraTakipKonusu { get; set; }
 
 
-        public int AtananAvukatId { get; set; }
+        public int? AtananAvukatId { get; set; }
         public Avukat MyProperty { get; set; }
 
-        public Durusma DurusmaId { get; set; }
+        public int? DurusmaId { get; set; }
         public ICollection<Durusma> Durusmalar { get; set; }
 
     }

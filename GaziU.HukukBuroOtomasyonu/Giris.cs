@@ -16,5 +16,11 @@ namespace GaziU.HukukBuroOtomasyonu
         {
             InitializeComponent();
         }
+
+        private void girisBtn_Click(object sender, EventArgs e)
+        {
+            var s = new Davalar();
+            s.Show();
+        }
     }
 }
