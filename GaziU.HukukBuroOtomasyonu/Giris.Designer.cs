@@ -30,8 +30,8 @@
         {
             avKimliklbl = new Label();
             avSifrelbl = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            avTcTxt = new TextBox();
+            avSifreTxt = new TextBox();
             girisBtn = new Button();
             SuspendLayout();
             // 
@@ -53,19 +53,19 @@
             avSifrelbl.TabIndex = 1;
             avSifrelbl.Text = "Avukat Şifre";
             // 
-            // textBox1
+            // avTcTxt
             // 
-            textBox1.Location = new Point(185, 111);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 2;
+            avTcTxt.Location = new Point(185, 111);
+            avTcTxt.Name = "avTcTxt";
+            avTcTxt.Size = new Size(125, 27);
+            avTcTxt.TabIndex = 2;
             // 
-            // textBox2
+            // avSifreTxt
             // 
-            textBox2.Location = new Point(185, 174);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 3;
+            avSifreTxt.Location = new Point(185, 174);
+            avSifreTxt.Name = "avSifreTxt";
+            avSifreTxt.Size = new Size(125, 27);
+            avSifreTxt.TabIndex = 3;
             // 
             // girisBtn
             // 
@@ -83,8 +83,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(513, 318);
             Controls.Add(girisBtn);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(avSifreTxt);
+            Controls.Add(avTcTxt);
             Controls.Add(avSifrelbl);
             Controls.Add(avKimliklbl);
             Name = "Giris";
@@ -97,8 +97,8 @@
 
         private Label avKimliklbl;
         private Label avSifrelbl;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox avTcTxt;
+        private TextBox avSifreTxt;
         private Button girisBtn;
     }
 }

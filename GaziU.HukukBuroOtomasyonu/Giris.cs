@@ -1,4 +1,7 @@
-﻿using System;
+﻿using GaziU.HukukBuroOtomasyonu.BL.Services.Abstract;
+using GaziU.HukukBuroOtomasyonu.DAL.Dto;
+using GaziU.HukukBuroOtomasyonu.DAL.Repsitory.Abstract;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +15,33 @@ namespace GaziU.HukukBuroOtomasyonu
 {
     public partial class Giris : Form
     {
-        public Giris()
+        private IAvukatService avService;
+        public Giris(IAvukatRepository avService)
         {
             InitializeComponent();
+            this.avService = avService;
         }
 
         private void girisBtn_Click(object sender, EventArgs e)
         {
-            var s = new Davalar();
-            s.Show();
+            var logindto = new AvukatLoginDto()
+            {
+                AvukatTcNo = Convert.ToInt64(avTcTxt.Text),
+                Sifre = avSifreTxt.Text
+            };
+
+            var avukat = avService.GetAvukatByLogin(logindto);
+            if (avukat!=null)
+            {
+                var s = new Davalar(avukat);
+                s.Show();
+            }
+            else
+            {
+                MessageBox.Show("Girdiğiniz bilgilerle eşleşen avukat bulunamadı");
+            }
+
+            
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GaziU.HukukBuroOtomasyonu.DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace GaziU.HukukBuroOtomasyonu
 {
     public partial class Davalar : Form
     {
-        public Davalar()
+        public Avukat avukat;
+        public Davalar(Avukat avukat)
         {
             InitializeComponent();
+            this.avukat = avukat;
         }
 
         public void ListViewColumnsAdd()
@@ -46,6 +49,12 @@ namespace GaziU.HukukBuroOtomasyonu
         private void davalarList_SelectedIndexChanged(object sender, EventArgs e)
         {
             MessageBox.Show("Test");
+        }
+
+        private void dosyaEkleBtn_Click(object sender, EventArgs e)
+        {
+            var s = new DavaDosyaEkleme();
+            s.Show();
         }
     }
 }
