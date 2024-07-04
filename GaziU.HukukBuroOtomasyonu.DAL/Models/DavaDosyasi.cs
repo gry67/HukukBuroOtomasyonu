@@ -29,7 +29,7 @@ namespace GaziU.HukukBuroOtomasyonu.DAL.Models
 
 
         public int? AtananAvukatId { get; set; }
-        public Avukat MyProperty { get; set; }
+        public Avukat AtananAvukat { get; set; }
 
         public int? DurusmaId { get; set; }
         public ICollection<Durusma> Durusmalar { get; set; }

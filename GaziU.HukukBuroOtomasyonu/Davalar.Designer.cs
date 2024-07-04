@@ -30,6 +30,7 @@
         {
             davalarList = new ListView();
             dosyaEkleBtn = new Button();
+            YenileBtn = new Button();
             SuspendLayout();
             // 
             // davalarList
@@ -53,11 +54,22 @@
             dosyaEkleBtn.UseVisualStyleBackColor = true;
             dosyaEkleBtn.Click += dosyaEkleBtn_Click;
             // 
+            // YenileBtn
+            // 
+            YenileBtn.Location = new Point(12, 119);
+            YenileBtn.Name = "YenileBtn";
+            YenileBtn.Size = new Size(94, 29);
+            YenileBtn.TabIndex = 2;
+            YenileBtn.Text = "Yenile";
+            YenileBtn.UseVisualStyleBackColor = true;
+            YenileBtn.Click += YenileBtn_Click;
+            // 
             // Davalar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1005, 558);
+            Controls.Add(YenileBtn);
             Controls.Add(dosyaEkleBtn);
             Controls.Add(davalarList);
             Name = "Davalar";
@@ -70,5 +82,6 @@
 
         private ListView davalarList;
         private Button dosyaEkleBtn;
+        private Button YenileBtn;
     }
 }

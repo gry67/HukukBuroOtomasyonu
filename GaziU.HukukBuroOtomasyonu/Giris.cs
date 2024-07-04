@@ -1,6 +1,8 @@
 ﻿using GaziU.HukukBuroOtomasyonu.BL.Services.Abstract;
 using GaziU.HukukBuroOtomasyonu.DAL.Dto;
+using GaziU.HukukBuroOtomasyonu.DAL.Models;
 using GaziU.HukukBuroOtomasyonu.DAL.Repsitory.Abstract;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,10 +18,12 @@ namespace GaziU.HukukBuroOtomasyonu
     public partial class Giris : Form
     {
         private IAvukatService avService;
-        public Giris(IAvukatRepository avService)
+        private ServiceProvider services;
+        public Giris(IAvukatService avService,ServiceProvider services)
         {
             InitializeComponent();
             this.avService = avService;
+            this.services = services;
         }
 
         private void girisBtn_Click(object sender, EventArgs e)
@@ -33,8 +37,10 @@ namespace GaziU.HukukBuroOtomasyonu
             var avukat = avService.GetAvukatByLogin(logindto);
             if (avukat!=null)
             {
-                var s = new Davalar(avukat);
-                s.Show();
+                var s = new Davalar(services.GetRequiredService<IGenericService<DavaDosyasi>>(), services.GetRequiredService<IGenericService<Avukat>>(),services,this);
+                s.avukat = avukat;
+                s.ShowDialog();
+                Close();
             }
             else
             {

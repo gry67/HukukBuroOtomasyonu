@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -51,6 +52,11 @@ namespace GaziU.HukukBuroOtomasyonu.DAL.Repsitory.Concrete
         public List<T> GetAll()
         {
             return _dbSet.ToList();
+        }
+
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>> expression)
+        {
+            return _dbSet.Where(expression);
         }
 
         public T GetById(int id)

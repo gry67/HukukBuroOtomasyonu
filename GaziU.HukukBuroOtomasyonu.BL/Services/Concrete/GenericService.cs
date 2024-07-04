@@ -3,6 +3,7 @@ using GaziU.HukukBuroOtomasyonu.DAL.Repsitory.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,6 +31,11 @@ namespace GaziU.HukukBuroOtomasyonu.BL.Services.Concrete
         public List<T> GetAll()
         {
             return repository.GetAll();
+        }
+
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>> expression)
+        {
+            return repository.GetAll(expression);
         }
 
         public T GetById(int id)

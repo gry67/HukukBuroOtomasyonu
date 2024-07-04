@@ -1,4 +1,6 @@
-﻿using GaziU.HukukBuroOtomasyonu.DAL.Models;
+﻿using GaziU.HukukBuroOtomasyonu.BL.Services.Abstract;
+using GaziU.HukukBuroOtomasyonu.DAL.Models;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +16,17 @@ namespace GaziU.HukukBuroOtomasyonu
     public partial class Davalar : Form
     {
         public Avukat avukat;
-        public Davalar(Avukat avukat)
+        public IGenericService<DavaDosyasi> dosyaService;
+        public IGenericService<Avukat> avService;
+        private ServiceProvider services;
+        private Giris giris;
+        public Davalar(IGenericService<DavaDosyasi> dosyaService, IGenericService<Avukat> avService, ServiceProvider services, Giris giris)
         {
             InitializeComponent();
-            this.avukat = avukat;
+            this.dosyaService = dosyaService;
+            this.avService = avService;
+            this.services = services;
+            this.giris = giris;
         }
 
         public void ListViewColumnsAdd()
@@ -29,21 +38,29 @@ namespace GaziU.HukukBuroOtomasyonu
             davalarList.Columns.Add("Dosya Açılış Tarihi", 400);
         }
 
+        public void ListViewDataAdd()
+        {
+            var davalar = dosyaService.GetAll(d => d.AtananAvukatId == avukat.Id);
 
+            foreach (var d in davalar) //hatayı burada veriyor
+            {
+                string id = d.Id.ToString();
+                string esas = d.EsasNumarası.ToString();
+                string davaKonusu = d.DavaKonusu;
+                string atananAv = avService.GetById(d.AtananAvukatId ?? 0).Adi;
+                string dosyaacilis = d.CreatedDate.ToString();
+
+                string[] bilgiler = { id, esas, davaKonusu, atananAv, dosyaacilis };
+                ListViewItem item = new ListViewItem(bilgiler);
+
+                davalarList.Items.Add(item);
+            }
+        }
 
         private void Davalar_Load(object sender, EventArgs e)
         {
             ListViewColumnsAdd();
-            string id = "50";
-            string esas = "984986";
-            string davaKonusu = " gdngdsfdopısfj hpj pdzfj hmpdoşf";
-            string atananAv = "güray gülgün";
-            string dosyaacilis = "epofgmsoagmqsapğ";
-
-            string[] bilgiler = { id, esas, davaKonusu, atananAv, dosyaacilis };
-            ListViewItem item = new ListViewItem(bilgiler);
-
-            davalarList.Items.Add(item);
+            ListViewDataAdd();
         }
 
         private void davalarList_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,8 +70,14 @@ namespace GaziU.HukukBuroOtomasyonu
 
         private void dosyaEkleBtn_Click(object sender, EventArgs e)
         {
-            var s = new DavaDosyaEkleme();
+            var s = new DavaDosyaEkleme(services.GetRequiredService<IGenericService<DavaDosyasi>>(),services.GetRequiredService<IGenericService<Avukat>>());
             s.Show();
+        }
+
+        private void YenileBtn_Click(object sender, EventArgs e)
+        {
+            davalarList.Items.Clear();
+            ListViewDataAdd();
         }
     }
 }

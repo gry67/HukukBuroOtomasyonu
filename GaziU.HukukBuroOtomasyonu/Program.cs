@@ -19,7 +19,7 @@ namespace GaziU.HukukBuroOtomasyonu
         static void Main()
         {
             var services = new ServiceCollection();
-            services.AddDbContext<AppDbContext>();//burada hata veriyor
+            services.AddDbContext<AppDbContext>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
             services.AddScoped<IAvukatRepository, AvukatRepository>();
@@ -30,7 +30,7 @@ namespace GaziU.HukukBuroOtomasyonu
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Giris(serviceProvider.GetRequiredService<IAvukatRepository>()));
+            Application.Run(new Giris(serviceProvider.GetRequiredService<IAvukatService>(),serviceProvider));
         }
     }
 }
