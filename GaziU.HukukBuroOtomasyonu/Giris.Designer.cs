@@ -34,12 +34,13 @@
             avSifreTxt = new TextBox();
             girisBtn = new Button();
             Kayitbtn = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // avKimliklbl
             // 
             avKimliklbl.AutoSize = true;
-            avKimliklbl.Location = new Point(38, 114);
+            avKimliklbl.Location = new Point(35, 106);
             avKimliklbl.Name = "avKimliklbl";
             avKimliklbl.Size = new Size(141, 20);
             avKimliklbl.TabIndex = 0;
@@ -48,7 +49,7 @@
             // avSifrelbl
             // 
             avSifrelbl.AutoSize = true;
-            avSifrelbl.Location = new Point(91, 181);
+            avSifrelbl.Location = new Point(88, 152);
             avSifrelbl.Name = "avSifrelbl";
             avSifrelbl.Size = new Size(88, 20);
             avSifrelbl.TabIndex = 1;
@@ -56,14 +57,14 @@
             // 
             // avTcTxt
             // 
-            avTcTxt.Location = new Point(185, 111);
+            avTcTxt.Location = new Point(182, 103);
             avTcTxt.Name = "avTcTxt";
             avTcTxt.Size = new Size(125, 27);
             avTcTxt.TabIndex = 2;
             // 
             // avSifreTxt
             // 
-            avSifreTxt.Location = new Point(185, 174);
+            avSifreTxt.Location = new Point(182, 145);
             avSifreTxt.Name = "avSifreTxt";
             avSifreTxt.PasswordChar = '*';
             avSifreTxt.Size = new Size(125, 27);
@@ -71,7 +72,7 @@
             // 
             // girisBtn
             // 
-            girisBtn.Location = new Point(185, 222);
+            girisBtn.Location = new Point(182, 193);
             girisBtn.Name = "girisBtn";
             girisBtn.Size = new Size(94, 29);
             girisBtn.TabIndex = 4;
@@ -81,7 +82,7 @@
             // 
             // Kayitbtn
             // 
-            Kayitbtn.Location = new Point(185, 257);
+            Kayitbtn.Location = new Point(182, 228);
             Kayitbtn.Name = "Kayitbtn";
             Kayitbtn.Size = new Size(94, 29);
             Kayitbtn.TabIndex = 5;
@@ -89,11 +90,22 @@
             Kayitbtn.UseVisualStyleBackColor = true;
             Kayitbtn.Click += Kayitbtn_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Calibri", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            label1.Location = new Point(116, 50);
+            label1.Name = "label1";
+            label1.Size = new Size(146, 35);
+            label1.TabIndex = 6;
+            label1.Text = "Giriş Ekranı";
+            // 
             // Giris
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(513, 318);
+            ClientSize = new Size(398, 277);
+            Controls.Add(label1);
             Controls.Add(Kayitbtn);
             Controls.Add(girisBtn);
             Controls.Add(avSifreTxt);
@@ -114,5 +126,6 @@
         private TextBox avSifreTxt;
         private Button girisBtn;
         private Button Kayitbtn;
+        private Label label1;
     }
 }

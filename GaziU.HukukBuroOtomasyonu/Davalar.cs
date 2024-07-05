@@ -33,25 +33,29 @@ namespace GaziU.HukukBuroOtomasyonu
         public void ListViewColumnsAdd()
         {
             davalarList.Columns.Add("ID", 50);
-            davalarList.Columns.Add("Esas Numarası", 250);
+            davalarList.Columns.Add("Esas Numarası", 100);
+            davalarList.Columns.Add("Davacı", 200);
+            davalarList.Columns.Add("Davalıı", 200);
             davalarList.Columns.Add("Dava Konusu", 300);
-            davalarList.Columns.Add("Atanan Avukat", 300);
-            davalarList.Columns.Add("Dosya Açılış Tarihi", 400);
+            davalarList.Columns.Add("Atanan Avukat", 100);
+            davalarList.Columns.Add("Dosya Açılış Tarihi", 200);
         }
 
         public void ListViewDataAdd()
         {
             var davalar = dosyaService.GetAll(d => d.AtananAvukatId == avukat.Id);
 
-            foreach (var d in davalar) //hatayı burada veriyor
+            foreach (var d in davalar)
             {
                 string id = d.Id.ToString();
                 string esas = d.EsasNumarası.ToString();
+                string davaci = d.Davaci;
+                string davali = d.Davali;
                 string davaKonusu = d.DavaKonusu;
                 string atananAv = avService.GetById(d.AtananAvukatId ?? 0).Adi;
                 string dosyaacilis = d.CreatedDate.ToString();
 
-                string[] bilgiler = { id, esas, davaKonusu, atananAv, dosyaacilis };
+                string[] bilgiler = { id, esas,davaci,davali, davaKonusu, atananAv, dosyaacilis };
                 ListViewItem item = new ListViewItem(bilgiler);
 
                 davalarList.Items.Add(item);
@@ -69,7 +73,7 @@ namespace GaziU.HukukBuroOtomasyonu
 
                 var s = new DavaDosyaEkleme(dosyaService, avService,
                     services.GetRequiredService<IGenericService<YargiTuru>>(),
-                    services.GetRequiredService<IGenericService<Mahkeme>>(), selectedDosya,services);
+                    services.GetRequiredService<IGenericService<Mahkeme>>(), selectedDosya, services);
                 s.Show();
             }
         }
@@ -127,7 +131,7 @@ namespace GaziU.HukukBuroOtomasyonu
             {
                 // "Esas Numarası" sütunundaki değeri al
                 string esasNumarasıText = item.SubItems[1].Text;
-                
+
                 // Esas numarası metin olarak eşleşiyorsa
                 if (esasNumarasıText == esasNumarasi.ToString())
                 {
@@ -145,6 +149,12 @@ namespace GaziU.HukukBuroOtomasyonu
             {
                 MessageBox.Show("Esas numarası bulunamadı!");
             }
+        }
+
+        private void DurusmalarBtn_Click(object sender, EventArgs e)
+        {
+            var s = new ButunDurusmalar(services);
+            s.Show();
         }
     }
 }

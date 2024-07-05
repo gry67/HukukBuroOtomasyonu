@@ -39,6 +39,7 @@
             IcraTutarLbl = new Label();
             IcraKonusuLbl = new Label();
             DosyaBilgileriGrp = new GroupBox();
+            DurusmalariGosterbtn = new Button();
             button1 = new Button();
             KayitSilBtn = new Button();
             Mahkemecmb = new ComboBox();
@@ -58,7 +59,6 @@
             DosyaNotxt = new TextBox();
             DosyaNotutxt = new TextBox();
             DavaKonusutxt = new TextBox();
-            DurusmalariGosterbtn = new Button();
             DosyaBilgileriGrp.SuspendLayout();
             SuspendLayout();
             // 
@@ -201,6 +201,16 @@
             DosyaBilgileriGrp.TabStop = false;
             DosyaBilgileriGrp.Text = "Dosya Bilgileri";
             // 
+            // DurusmalariGosterbtn
+            // 
+            DurusmalariGosterbtn.Location = new Point(518, 39);
+            DurusmalariGosterbtn.Name = "DurusmalariGosterbtn";
+            DurusmalariGosterbtn.Size = new Size(151, 29);
+            DurusmalariGosterbtn.TabIndex = 11;
+            DurusmalariGosterbtn.Text = "Duruşmaları Göster";
+            DurusmalariGosterbtn.UseVisualStyleBackColor = true;
+            DurusmalariGosterbtn.Click += DurusmalariGosterbtn_Click;
+            // 
             // button1
             // 
             button1.Location = new Point(518, 84);
@@ -226,7 +236,7 @@
             Mahkemecmb.FormattingEnabled = true;
             Mahkemecmb.Location = new Point(127, 189);
             Mahkemecmb.Name = "Mahkemecmb";
-            Mahkemecmb.Size = new Size(151, 28);
+            Mahkemecmb.Size = new Size(239, 28);
             Mahkemecmb.TabIndex = 27;
             // 
             // YargiTurucmb
@@ -356,16 +366,6 @@
             DavaKonusutxt.Name = "DavaKonusutxt";
             DavaKonusutxt.Size = new Size(235, 152);
             DavaKonusutxt.TabIndex = 10;
-            // 
-            // DurusmalariGosterbtn
-            // 
-            DurusmalariGosterbtn.Location = new Point(518, 39);
-            DurusmalariGosterbtn.Name = "DurusmalariGosterbtn";
-            DurusmalariGosterbtn.Size = new Size(151, 29);
-            DurusmalariGosterbtn.TabIndex = 11;
-            DurusmalariGosterbtn.Text = "Duruşmaları Göster";
-            DurusmalariGosterbtn.UseVisualStyleBackColor = true;
-            DurusmalariGosterbtn.Click += DurusmalariGosterbtn_Click;
             // 
             // DavaDosyaEkleme
             // 

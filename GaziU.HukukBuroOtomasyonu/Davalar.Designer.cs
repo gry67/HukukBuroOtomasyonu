@@ -32,9 +32,10 @@
             dosyaEkleBtn = new Button();
             YenileBtn = new Button();
             groupBox1 = new GroupBox();
-            EsasNoLbl = new Label();
-            EsasNoTxt = new TextBox();
             BulBtn = new Button();
+            EsasNoTxt = new TextBox();
+            EsasNoLbl = new Label();
+            DurusmalarBtn = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             davalarList.FullRowSelect = true;
             davalarList.Location = new Point(12, 154);
             davalarList.Name = "davalarList";
-            davalarList.Size = new Size(1408, 357);
+            davalarList.Size = new Size(1313, 357);
             davalarList.TabIndex = 0;
             davalarList.UseCompatibleStateImageBehavior = false;
             davalarList.View = View.Details;
@@ -63,9 +64,9 @@
             // 
             YenileBtn.Location = new Point(249, 119);
             YenileBtn.Name = "YenileBtn";
-            YenileBtn.Size = new Size(94, 29);
+            YenileBtn.Size = new Size(140, 29);
             YenileBtn.TabIndex = 2;
-            YenileBtn.Text = "Yenile";
+            YenileBtn.Text = "Yenile/Sıfırla";
             YenileBtn.UseVisualStyleBackColor = true;
             YenileBtn.Click += YenileBtn_Click;
             // 
@@ -81,22 +82,6 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Esas No'ya Göre Arama";
             // 
-            // EsasNoLbl
-            // 
-            EsasNoLbl.AutoSize = true;
-            EsasNoLbl.Location = new Point(6, 52);
-            EsasNoLbl.Name = "EsasNoLbl";
-            EsasNoLbl.Size = new Size(57, 20);
-            EsasNoLbl.TabIndex = 0;
-            EsasNoLbl.Text = "EsasNo";
-            // 
-            // EsasNoTxt
-            // 
-            EsasNoTxt.Location = new Point(69, 52);
-            EsasNoTxt.Name = "EsasNoTxt";
-            EsasNoTxt.Size = new Size(125, 27);
-            EsasNoTxt.TabIndex = 1;
-            // 
             // BulBtn
             // 
             BulBtn.Location = new Point(69, 85);
@@ -107,11 +92,38 @@
             BulBtn.UseVisualStyleBackColor = true;
             BulBtn.Click += BulBtn_Click;
             // 
+            // EsasNoTxt
+            // 
+            EsasNoTxt.Location = new Point(69, 52);
+            EsasNoTxt.Name = "EsasNoTxt";
+            EsasNoTxt.Size = new Size(125, 27);
+            EsasNoTxt.TabIndex = 1;
+            // 
+            // EsasNoLbl
+            // 
+            EsasNoLbl.AutoSize = true;
+            EsasNoLbl.Location = new Point(6, 52);
+            EsasNoLbl.Name = "EsasNoLbl";
+            EsasNoLbl.Size = new Size(57, 20);
+            EsasNoLbl.TabIndex = 0;
+            EsasNoLbl.Text = "EsasNo";
+            // 
+            // DurusmalarBtn
+            // 
+            DurusmalarBtn.Location = new Point(249, 23);
+            DurusmalarBtn.Name = "DurusmalarBtn";
+            DurusmalarBtn.Size = new Size(140, 29);
+            DurusmalarBtn.TabIndex = 4;
+            DurusmalarBtn.Text = "Bütün Duruşmalar";
+            DurusmalarBtn.UseVisualStyleBackColor = true;
+            DurusmalarBtn.Click += DurusmalarBtn_Click;
+            // 
             // Davalar
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1432, 558);
+            ClientSize = new Size(1335, 558);
+            Controls.Add(DurusmalarBtn);
             Controls.Add(groupBox1);
             Controls.Add(YenileBtn);
             Controls.Add(dosyaEkleBtn);
@@ -134,5 +146,6 @@
         private Button BulBtn;
         private TextBox EsasNoTxt;
         private Label EsasNoLbl;
+        private Button DurusmalarBtn;
     }
 }

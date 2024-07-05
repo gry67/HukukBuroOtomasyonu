@@ -53,6 +53,7 @@ namespace GaziU.HukukBuroOtomasyonu
         private void Kayitbtn_Click(object sender, EventArgs e)
         {
             var s = new AvukatKayit(services.GetRequiredService<IGenericService<Avukat>>());
+            s.Show();
         }
     }
 }

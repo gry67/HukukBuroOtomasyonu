@@ -40,9 +40,6 @@ namespace GaziU.HukukBuroOtomasyonu
                 MessageBox.Show("Kayıt Başarısız");
                 Close();
             }
-
-
-
         }
     }
 }
