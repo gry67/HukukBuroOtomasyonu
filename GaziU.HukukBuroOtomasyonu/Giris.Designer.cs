@@ -33,6 +33,7 @@
             avTcTxt = new TextBox();
             avSifreTxt = new TextBox();
             girisBtn = new Button();
+            Kayitbtn = new Button();
             SuspendLayout();
             // 
             // avKimliklbl
@@ -64,12 +65,13 @@
             // 
             avSifreTxt.Location = new Point(185, 174);
             avSifreTxt.Name = "avSifreTxt";
+            avSifreTxt.PasswordChar = '*';
             avSifreTxt.Size = new Size(125, 27);
             avSifreTxt.TabIndex = 3;
             // 
             // girisBtn
             // 
-            girisBtn.Location = new Point(194, 226);
+            girisBtn.Location = new Point(185, 222);
             girisBtn.Name = "girisBtn";
             girisBtn.Size = new Size(94, 29);
             girisBtn.TabIndex = 4;
@@ -77,11 +79,22 @@
             girisBtn.UseVisualStyleBackColor = true;
             girisBtn.Click += girisBtn_Click;
             // 
+            // Kayitbtn
+            // 
+            Kayitbtn.Location = new Point(185, 257);
+            Kayitbtn.Name = "Kayitbtn";
+            Kayitbtn.Size = new Size(94, 29);
+            Kayitbtn.TabIndex = 5;
+            Kayitbtn.Text = "Kaydol";
+            Kayitbtn.UseVisualStyleBackColor = true;
+            Kayitbtn.Click += Kayitbtn_Click;
+            // 
             // Giris
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(513, 318);
+            Controls.Add(Kayitbtn);
             Controls.Add(girisBtn);
             Controls.Add(avSifreTxt);
             Controls.Add(avTcTxt);
@@ -100,5 +113,6 @@
         private TextBox avTcTxt;
         private TextBox avSifreTxt;
         private Button girisBtn;
+        private Button Kayitbtn;
     }
 }

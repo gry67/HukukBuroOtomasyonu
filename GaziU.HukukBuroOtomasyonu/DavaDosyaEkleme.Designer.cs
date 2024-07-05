@@ -39,6 +39,8 @@
             IcraTutarLbl = new Label();
             IcraKonusuLbl = new Label();
             DosyaBilgileriGrp = new GroupBox();
+            button1 = new Button();
+            KayitSilBtn = new Button();
             Mahkemecmb = new ComboBox();
             YargiTurucmb = new ComboBox();
             MahkemeLbl = new Label();
@@ -56,7 +58,7 @@
             DosyaNotxt = new TextBox();
             DosyaNotutxt = new TextBox();
             DavaKonusutxt = new TextBox();
-            KayitSilBtn = new Button();
+            DurusmalariGosterbtn = new Button();
             DosyaBilgileriGrp.SuspendLayout();
             SuspendLayout();
             // 
@@ -162,6 +164,8 @@
             // 
             // DosyaBilgileriGrp
             // 
+            DosyaBilgileriGrp.Controls.Add(DurusmalariGosterbtn);
+            DosyaBilgileriGrp.Controls.Add(button1);
             DosyaBilgileriGrp.Controls.Add(KayitSilBtn);
             DosyaBilgileriGrp.Controls.Add(Mahkemecmb);
             DosyaBilgileriGrp.Controls.Add(YargiTurucmb);
@@ -196,6 +200,26 @@
             DosyaBilgileriGrp.TabIndex = 10;
             DosyaBilgileriGrp.TabStop = false;
             DosyaBilgileriGrp.Text = "Dosya Bilgileri";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(518, 84);
+            button1.Name = "button1";
+            button1.Size = new Size(115, 29);
+            button1.TabIndex = 11;
+            button1.Text = "Duruşma Ekle";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // KayitSilBtn
+            // 
+            KayitSilBtn.Location = new Point(618, 131);
+            KayitSilBtn.Name = "KayitSilBtn";
+            KayitSilBtn.Size = new Size(94, 29);
+            KayitSilBtn.TabIndex = 28;
+            KayitSilBtn.Text = "Kaydı Sil";
+            KayitSilBtn.UseVisualStyleBackColor = true;
+            KayitSilBtn.Click += KayitSilBtn_Click;
             // 
             // Mahkemecmb
             // 
@@ -333,15 +357,15 @@
             DavaKonusutxt.Size = new Size(235, 152);
             DavaKonusutxt.TabIndex = 10;
             // 
-            // KayitSilBtn
+            // DurusmalariGosterbtn
             // 
-            KayitSilBtn.Location = new Point(518, 94);
-            KayitSilBtn.Name = "KayitSilBtn";
-            KayitSilBtn.Size = new Size(94, 29);
-            KayitSilBtn.TabIndex = 28;
-            KayitSilBtn.Text = "Kaydı Sil";
-            KayitSilBtn.UseVisualStyleBackColor = true;
-            KayitSilBtn.Click += KayitSilBtn_Click;
+            DurusmalariGosterbtn.Location = new Point(518, 39);
+            DurusmalariGosterbtn.Name = "DurusmalariGosterbtn";
+            DurusmalariGosterbtn.Size = new Size(151, 29);
+            DurusmalariGosterbtn.TabIndex = 11;
+            DurusmalariGosterbtn.Text = "Duruşmaları Göster";
+            DurusmalariGosterbtn.UseVisualStyleBackColor = true;
+            DurusmalariGosterbtn.Click += DurusmalariGosterbtn_Click;
             // 
             // DavaDosyaEkleme
             // 
@@ -388,5 +412,7 @@
         private Label MahkemeLbl;
         private Label YargiTuruLbl;
         private Button KayitSilBtn;
+        private Button button1;
+        private Button DurusmalariGosterbtn;
     }
 }

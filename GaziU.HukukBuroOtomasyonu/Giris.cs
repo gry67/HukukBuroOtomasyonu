@@ -19,7 +19,7 @@ namespace GaziU.HukukBuroOtomasyonu
     {
         private IAvukatService avService;
         private ServiceProvider services;
-        public Giris(IAvukatService avService,ServiceProvider services)
+        public Giris(IAvukatService avService, ServiceProvider services)
         {
             InitializeComponent();
             this.avService = avService;
@@ -35,9 +35,9 @@ namespace GaziU.HukukBuroOtomasyonu
             };
 
             var avukat = avService.GetAvukatByLogin(logindto);
-            if (avukat!=null)
+            if (avukat != null)
             {
-                var s = new Davalar(services.GetRequiredService<IGenericService<DavaDosyasi>>(), services.GetRequiredService<IGenericService<Avukat>>(),services,this);
+                var s = new Davalar(services.GetRequiredService<IGenericService<DavaDosyasi>>(), services.GetRequiredService<IGenericService<Avukat>>(), services, this);
                 s.avukat = avukat;
                 Hide();
                 s.ShowDialog();
@@ -47,7 +47,12 @@ namespace GaziU.HukukBuroOtomasyonu
                 MessageBox.Show("Girdiğiniz bilgilerle eşleşen avukat bulunamadı");
             }
 
-            
+
+        }
+
+        private void Kayitbtn_Click(object sender, EventArgs e)
+        {
+            var s = new AvukatKayit(services.GetRequiredService<IGenericService<Avukat>>());
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using GaziU.HukukBuroOtomasyonu.BL.Services.Abstract;
 using GaziU.HukukBuroOtomasyonu.DAL.Models;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,11 +19,12 @@ namespace GaziU.HukukBuroOtomasyonu
         private IGenericService<Avukat> avukatService;
         private IGenericService<YargiTuru> yargiService;
         private IGenericService<Mahkeme> mahkemeService;
+        private ServiceProvider services;
 
         private DavaDosyasi existingDosya;
 
 
-        public DavaDosyaEkleme(IGenericService<DavaDosyasi> dosyaService, IGenericService<Avukat> avukatService, IGenericService<YargiTuru> yargiService, IGenericService<Mahkeme> mahkemeService, DavaDosyasi existingDosya = null)
+        public DavaDosyaEkleme(IGenericService<DavaDosyasi> dosyaService, IGenericService<Avukat> avukatService, IGenericService<YargiTuru> yargiService, IGenericService<Mahkeme> mahkemeService, DavaDosyasi existingDosya = null, ServiceProvider services = null)
         {
             InitializeComponent();
             this.dosyaService = dosyaService;
@@ -30,6 +32,7 @@ namespace GaziU.HukukBuroOtomasyonu
             this.yargiService = yargiService;
             this.mahkemeService = mahkemeService;
             this.existingDosya = existingDosya;
+            this.services = services;
         }
 
         List<string> dosyaDurumListesi = new List<string>
@@ -106,7 +109,7 @@ namespace GaziU.HukukBuroOtomasyonu
 
         private void KaydetBtn_Click(object sender, EventArgs e)
         {
-            if (existingDosya!=null)
+            if (existingDosya != null)
             {
                 if (AtananAvcmb.SelectedItem is Avukat secilenAvukat)
                 {
@@ -129,7 +132,7 @@ namespace GaziU.HukukBuroOtomasyonu
                             yeniDosya.AtananAvukatId = secilenAvukat.Id;
                             yeniDosya.YargiTuruId = selectedYargi.Id;
                             yeniDosya.MahkemeId = selectedMahkeme.Id;
-                            
+
 
                             if (!string.IsNullOrEmpty(icraTutartxt.Text))
                             {
@@ -205,7 +208,7 @@ namespace GaziU.HukukBuroOtomasyonu
                             else
                             {
                                 MessageBox.Show("Geçersiz İcra Tutarı");
-                                return; // Hata durumunda işlemi sonlandır
+                                return;
                             }
                         }
 
@@ -248,12 +251,12 @@ namespace GaziU.HukukBuroOtomasyonu
 
         private void KayitSilBtn_Click(object sender, EventArgs e)
         {
-            if (existingDosya==null)
+            if (existingDosya == null)
             {
                 MessageBox.Show("Boş bir kaydı silemezsiniz");
                 return;
             }
-            
+
             if (dosyaService.DeleteById(existingDosya.Id))
             {
                 MessageBox.Show("Silme başarılı");
@@ -262,6 +265,34 @@ namespace GaziU.HukukBuroOtomasyonu
             else
             {
                 MessageBox.Show("Kayıt silinemedi");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (existingDosya == null)
+            {
+                MessageBox.Show("Bu kayıt henüz kaydedilmemiş yada boş. Duruşma Ekleyemezsiniz.");
+                return;
+            }
+            else
+            {
+                var s = new DurusmaEkle(services, existingDosya);
+                s.ShowDialog();
+            }
+        }
+
+        private void DurusmalariGosterbtn_Click(object sender, EventArgs e)
+        {
+            if (existingDosya!=null)
+            {
+                var s = new Durusmalar(existingDosya, services.GetRequiredService<IGenericService<Durusma>>(),services);
+                s.Show();
+                Close();
+            }else
+            {
+                MessageBox.Show("Bu Kayıt Bomboş. Duruşma Kaydı Olamaz.");
+                return;
             }
         }
     }

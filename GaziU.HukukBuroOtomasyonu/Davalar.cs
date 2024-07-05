@@ -19,7 +19,7 @@ namespace GaziU.HukukBuroOtomasyonu
         public Avukat avukat;
         public IGenericService<DavaDosyasi> dosyaService;
         public IGenericService<Avukat> avService;
-        private ServiceProvider services;
+        public ServiceProvider services;
         private Giris giris;
         public Davalar(IGenericService<DavaDosyasi> dosyaService, IGenericService<Avukat> avService, ServiceProvider services, Giris giris)
         {
@@ -32,7 +32,7 @@ namespace GaziU.HukukBuroOtomasyonu
 
         public void ListViewColumnsAdd()
         {
-            davalarList.Columns.Add("ID", 250);
+            davalarList.Columns.Add("ID", 50);
             davalarList.Columns.Add("Esas Numarası", 250);
             davalarList.Columns.Add("Dava Konusu", 300);
             davalarList.Columns.Add("Atanan Avukat", 300);
@@ -69,7 +69,7 @@ namespace GaziU.HukukBuroOtomasyonu
 
                 var s = new DavaDosyaEkleme(dosyaService, avService,
                     services.GetRequiredService<IGenericService<YargiTuru>>(),
-                    services.GetRequiredService<IGenericService<Mahkeme>>(), selectedDosya);
+                    services.GetRequiredService<IGenericService<Mahkeme>>(), selectedDosya,services);
                 s.Show();
             }
         }

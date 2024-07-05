@@ -11,5 +11,6 @@ namespace GaziU.HukukBuroOtomasyonu.DAL.Models
         public int DavaDosyasiId { get; set; }
         public DavaDosyasi DavaDosyasi { get; set; }
         public DateTime DurusmaGunu { get; set; }
+        public string DurusmaYeri { get; set; }
     }
 }
