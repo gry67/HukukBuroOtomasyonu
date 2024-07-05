@@ -13,7 +13,6 @@ namespace GaziU.HukukBuroOtomasyonu.DAL.Models
         public string MahkemeBilgisi { get; set; }
 
 
-
         public string DosyaDurumu { get; set; }
         public string Davaci { get; set; }
         public string Davali { get; set; }
