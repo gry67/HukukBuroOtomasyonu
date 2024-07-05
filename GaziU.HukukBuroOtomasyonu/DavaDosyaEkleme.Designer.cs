@@ -39,6 +39,12 @@
             IcraTutarLbl = new Label();
             IcraKonusuLbl = new Label();
             DosyaBilgileriGrp = new GroupBox();
+            Mahkemecmb = new ComboBox();
+            YargiTurucmb = new ComboBox();
+            MahkemeLbl = new Label();
+            YargiTuruLbl = new Label();
+            AtananAvcmb = new ComboBox();
+            AtananAvLbl = new Label();
             KaydetBtn = new Button();
             DosyaDurumcmb = new ComboBox();
             esastxt = new TextBox();
@@ -50,8 +56,7 @@
             DosyaNotxt = new TextBox();
             DosyaNotutxt = new TextBox();
             DavaKonusutxt = new TextBox();
-            AtananAvLbl = new Label();
-            AtananAvcmb = new ComboBox();
+            KayitSilBtn = new Button();
             DosyaBilgileriGrp.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,7 +64,7 @@
             // 
             esasNoLbl.Anchor = AnchorStyles.None;
             esasNoLbl.AutoSize = true;
-            esasNoLbl.Location = new Point(16, 74);
+            esasNoLbl.Location = new Point(13, 103);
             esasNoLbl.Name = "esasNoLbl";
             esasNoLbl.Size = new Size(104, 20);
             esasNoLbl.TabIndex = 0;
@@ -69,7 +74,7 @@
             // 
             MahkemeNotLbl.Anchor = AnchorStyles.None;
             MahkemeNotLbl.AutoSize = true;
-            MahkemeNotLbl.Location = new Point(2, 110);
+            MahkemeNotLbl.Location = new Point(2, 227);
             MahkemeNotLbl.Name = "MahkemeNotLbl";
             MahkemeNotLbl.Size = new Size(118, 20);
             MahkemeNotLbl.TabIndex = 1;
@@ -79,7 +84,7 @@
             // 
             dosyaDurumLbl.Anchor = AnchorStyles.None;
             dosyaDurumLbl.AutoSize = true;
-            dosyaDurumLbl.Location = new Point(17, 153);
+            dosyaDurumLbl.Location = new Point(17, 262);
             dosyaDurumLbl.Name = "dosyaDurumLbl";
             dosyaDurumLbl.Size = new Size(103, 20);
             dosyaDurumLbl.TabIndex = 2;
@@ -89,7 +94,7 @@
             // 
             davaciLbl.Anchor = AnchorStyles.None;
             davaciLbl.AutoSize = true;
-            davaciLbl.Location = new Point(66, 197);
+            davaciLbl.Location = new Point(65, 296);
             davaciLbl.Name = "davaciLbl";
             davaciLbl.Size = new Size(54, 20);
             davaciLbl.TabIndex = 3;
@@ -99,7 +104,7 @@
             // 
             davaliLbl.Anchor = AnchorStyles.None;
             davaliLbl.AutoSize = true;
-            davaliLbl.Location = new Point(69, 230);
+            davaliLbl.Location = new Point(66, 329);
             davaliLbl.Name = "davaliLbl";
             davaliLbl.Size = new Size(51, 20);
             davaliLbl.TabIndex = 4;
@@ -109,7 +114,7 @@
             // 
             DosyaNotLbl.Anchor = AnchorStyles.None;
             DosyaNotLbl.AutoSize = true;
-            DosyaNotLbl.Location = new Point(32, 271);
+            DosyaNotLbl.Location = new Point(32, 370);
             DosyaNotLbl.Name = "DosyaNotLbl";
             DosyaNotLbl.Size = new Size(87, 20);
             DosyaNotLbl.TabIndex = 5;
@@ -119,7 +124,7 @@
             // 
             DosyaNumarasiLbl.Anchor = AnchorStyles.None;
             DosyaNumarasiLbl.AutoSize = true;
-            DosyaNumarasiLbl.Location = new Point(395, 139);
+            DosyaNumarasiLbl.Location = new Point(395, 231);
             DosyaNumarasiLbl.Name = "DosyaNumarasiLbl";
             DosyaNumarasiLbl.Size = new Size(117, 20);
             DosyaNumarasiLbl.TabIndex = 6;
@@ -129,7 +134,7 @@
             // 
             DavaKonusuLbl.Anchor = AnchorStyles.None;
             DavaKonusuLbl.AutoSize = true;
-            DavaKonusuLbl.Location = new Point(417, 271);
+            DavaKonusuLbl.Location = new Point(417, 367);
             DavaKonusuLbl.Name = "DavaKonusuLbl";
             DavaKonusuLbl.Size = new Size(95, 20);
             DavaKonusuLbl.TabIndex = 7;
@@ -139,7 +144,7 @@
             // 
             IcraTutarLbl.Anchor = AnchorStyles.None;
             IcraTutarLbl.AutoSize = true;
-            IcraTutarLbl.Location = new Point(437, 178);
+            IcraTutarLbl.Location = new Point(437, 265);
             IcraTutarLbl.Name = "IcraTutarLbl";
             IcraTutarLbl.Size = new Size(75, 20);
             IcraTutarLbl.TabIndex = 8;
@@ -149,7 +154,7 @@
             // 
             IcraKonusuLbl.Anchor = AnchorStyles.None;
             IcraKonusuLbl.AutoSize = true;
-            IcraKonusuLbl.Location = new Point(427, 211);
+            IcraKonusuLbl.Location = new Point(427, 307);
             IcraKonusuLbl.Name = "IcraKonusuLbl";
             IcraKonusuLbl.Size = new Size(85, 20);
             IcraKonusuLbl.TabIndex = 9;
@@ -157,6 +162,11 @@
             // 
             // DosyaBilgileriGrp
             // 
+            DosyaBilgileriGrp.Controls.Add(KayitSilBtn);
+            DosyaBilgileriGrp.Controls.Add(Mahkemecmb);
+            DosyaBilgileriGrp.Controls.Add(YargiTurucmb);
+            DosyaBilgileriGrp.Controls.Add(MahkemeLbl);
+            DosyaBilgileriGrp.Controls.Add(YargiTuruLbl);
             DosyaBilgileriGrp.Controls.Add(AtananAvcmb);
             DosyaBilgileriGrp.Controls.Add(AtananAvLbl);
             DosyaBilgileriGrp.Controls.Add(KaydetBtn);
@@ -182,14 +192,66 @@
             DosyaBilgileriGrp.Controls.Add(DosyaNotLbl);
             DosyaBilgileriGrp.Location = new Point(12, 12);
             DosyaBilgileriGrp.Name = "DosyaBilgileriGrp";
-            DosyaBilgileriGrp.Size = new Size(759, 426);
+            DosyaBilgileriGrp.Size = new Size(759, 543);
             DosyaBilgileriGrp.TabIndex = 10;
             DosyaBilgileriGrp.TabStop = false;
             DosyaBilgileriGrp.Text = "Dosya Bilgileri";
             // 
+            // Mahkemecmb
+            // 
+            Mahkemecmb.FormattingEnabled = true;
+            Mahkemecmb.Location = new Point(127, 189);
+            Mahkemecmb.Name = "Mahkemecmb";
+            Mahkemecmb.Size = new Size(151, 28);
+            Mahkemecmb.TabIndex = 27;
+            // 
+            // YargiTurucmb
+            // 
+            YargiTurucmb.FormattingEnabled = true;
+            YargiTurucmb.Location = new Point(127, 155);
+            YargiTurucmb.Name = "YargiTurucmb";
+            YargiTurucmb.Size = new Size(151, 28);
+            YargiTurucmb.TabIndex = 26;
+            YargiTurucmb.SelectedIndexChanged += YargiTurucmb_SelectedIndexChanged;
+            // 
+            // MahkemeLbl
+            // 
+            MahkemeLbl.AutoSize = true;
+            MahkemeLbl.Location = new Point(43, 189);
+            MahkemeLbl.Name = "MahkemeLbl";
+            MahkemeLbl.Size = new Size(74, 20);
+            MahkemeLbl.TabIndex = 25;
+            MahkemeLbl.Text = "Mahkeme";
+            // 
+            // YargiTuruLbl
+            // 
+            YargiTuruLbl.AutoSize = true;
+            YargiTuruLbl.Location = new Point(43, 158);
+            YargiTuruLbl.Name = "YargiTuruLbl";
+            YargiTuruLbl.Size = new Size(75, 20);
+            YargiTuruLbl.TabIndex = 24;
+            YargiTuruLbl.Text = "Yargı Türü";
+            // 
+            // AtananAvcmb
+            // 
+            AtananAvcmb.FormattingEnabled = true;
+            AtananAvcmb.Location = new Point(518, 181);
+            AtananAvcmb.Name = "AtananAvcmb";
+            AtananAvcmb.Size = new Size(151, 28);
+            AtananAvcmb.TabIndex = 23;
+            // 
+            // AtananAvLbl
+            // 
+            AtananAvLbl.AutoSize = true;
+            AtananAvLbl.Location = new Point(407, 189);
+            AtananAvLbl.Name = "AtananAvLbl";
+            AtananAvLbl.Size = new Size(105, 20);
+            AtananAvLbl.TabIndex = 22;
+            AtananAvLbl.Text = "Atanan Avukat";
+            // 
             // KaydetBtn
             // 
-            KaydetBtn.Location = new Point(549, 26);
+            KaydetBtn.Location = new Point(518, 131);
             KaydetBtn.Name = "KaydetBtn";
             KaydetBtn.Size = new Size(94, 29);
             KaydetBtn.TabIndex = 21;
@@ -200,21 +262,21 @@
             // DosyaDurumcmb
             // 
             DosyaDurumcmb.FormattingEnabled = true;
-            DosyaDurumcmb.Location = new Point(125, 149);
+            DosyaDurumcmb.Location = new Point(126, 259);
             DosyaDurumcmb.Name = "DosyaDurumcmb";
             DosyaDurumcmb.Size = new Size(152, 28);
             DosyaDurumcmb.TabIndex = 20;
             // 
             // esastxt
             // 
-            esastxt.Location = new Point(125, 71);
+            esastxt.Location = new Point(126, 100);
             esastxt.Name = "esastxt";
             esastxt.Size = new Size(126, 27);
             esastxt.TabIndex = 19;
             // 
             // icraKonutxt
             // 
-            icraKonutxt.Location = new Point(518, 208);
+            icraKonutxt.Location = new Point(518, 307);
             icraKonutxt.Multiline = true;
             icraKonutxt.Name = "icraKonutxt";
             icraKonutxt.Size = new Size(235, 54);
@@ -222,42 +284,42 @@
             // 
             // icraTutartxt
             // 
-            icraTutartxt.Location = new Point(518, 175);
+            icraTutartxt.Location = new Point(518, 262);
             icraTutartxt.Name = "icraTutartxt";
             icraTutartxt.Size = new Size(125, 27);
             icraTutartxt.TabIndex = 17;
             // 
             // MahkemeBilgisitxt
             // 
-            MahkemeBilgisitxt.Location = new Point(125, 107);
+            MahkemeBilgisitxt.Location = new Point(126, 224);
             MahkemeBilgisitxt.Name = "MahkemeBilgisitxt";
             MahkemeBilgisitxt.Size = new Size(240, 27);
             MahkemeBilgisitxt.TabIndex = 16;
             // 
             // DavaciTxt
             // 
-            DavaciTxt.Location = new Point(125, 194);
+            DavaciTxt.Location = new Point(125, 293);
             DavaciTxt.Name = "DavaciTxt";
             DavaciTxt.Size = new Size(194, 27);
             DavaciTxt.TabIndex = 14;
             // 
             // Davalitxt
             // 
-            Davalitxt.Location = new Point(125, 227);
+            Davalitxt.Location = new Point(125, 326);
             Davalitxt.Name = "Davalitxt";
             Davalitxt.Size = new Size(194, 27);
             Davalitxt.TabIndex = 13;
             // 
             // DosyaNotxt
             // 
-            DosyaNotxt.Location = new Point(518, 136);
+            DosyaNotxt.Location = new Point(518, 224);
             DosyaNotxt.Name = "DosyaNotxt";
             DosyaNotxt.Size = new Size(125, 27);
             DosyaNotxt.TabIndex = 12;
             // 
             // DosyaNotutxt
             // 
-            DosyaNotutxt.Location = new Point(125, 268);
+            DosyaNotutxt.Location = new Point(125, 370);
             DosyaNotutxt.Multiline = true;
             DosyaNotutxt.Name = "DosyaNotutxt";
             DosyaNotutxt.Size = new Size(286, 152);
@@ -265,34 +327,27 @@
             // 
             // DavaKonusutxt
             // 
-            DavaKonusutxt.Location = new Point(518, 268);
+            DavaKonusutxt.Location = new Point(518, 367);
             DavaKonusutxt.Multiline = true;
             DavaKonusutxt.Name = "DavaKonusutxt";
             DavaKonusutxt.Size = new Size(235, 152);
             DavaKonusutxt.TabIndex = 10;
             // 
-            // AtananAvLbl
+            // KayitSilBtn
             // 
-            AtananAvLbl.AutoSize = true;
-            AtananAvLbl.Location = new Point(407, 107);
-            AtananAvLbl.Name = "AtananAvLbl";
-            AtananAvLbl.Size = new Size(105, 20);
-            AtananAvLbl.TabIndex = 22;
-            AtananAvLbl.Text = "Atanan Avukat";
-            // 
-            // AtananAvcmb
-            // 
-            AtananAvcmb.FormattingEnabled = true;
-            AtananAvcmb.Location = new Point(518, 102);
-            AtananAvcmb.Name = "AtananAvcmb";
-            AtananAvcmb.Size = new Size(151, 28);
-            AtananAvcmb.TabIndex = 23;
+            KayitSilBtn.Location = new Point(518, 94);
+            KayitSilBtn.Name = "KayitSilBtn";
+            KayitSilBtn.Size = new Size(94, 29);
+            KayitSilBtn.TabIndex = 28;
+            KayitSilBtn.Text = "Kaydı Sil";
+            KayitSilBtn.UseVisualStyleBackColor = true;
+            KayitSilBtn.Click += KayitSilBtn_Click;
             // 
             // DavaDosyaEkleme
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(801, 460);
+            ClientSize = new Size(828, 596);
             Controls.Add(DosyaBilgileriGrp);
             Name = "DavaDosyaEkleme";
             Text = "DavaDosyaEkleme";
@@ -328,5 +383,10 @@
         private ComboBox DosyaDurumcmb;
         private ComboBox AtananAvcmb;
         private Label AtananAvLbl;
+        private ComboBox Mahkemecmb;
+        private ComboBox YargiTurucmb;
+        private Label MahkemeLbl;
+        private Label YargiTuruLbl;
+        private Button KayitSilBtn;
     }
 }

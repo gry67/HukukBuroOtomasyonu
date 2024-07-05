@@ -39,8 +39,8 @@ namespace GaziU.HukukBuroOtomasyonu
             {
                 var s = new Davalar(services.GetRequiredService<IGenericService<DavaDosyasi>>(), services.GetRequiredService<IGenericService<Avukat>>(),services,this);
                 s.avukat = avukat;
+                Hide();
                 s.ShowDialog();
-                Close();
             }
             else
             {

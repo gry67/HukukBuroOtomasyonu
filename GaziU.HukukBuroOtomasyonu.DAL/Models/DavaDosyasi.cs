@@ -31,6 +31,12 @@ namespace GaziU.HukukBuroOtomasyonu.DAL.Models
         public int? AtananAvukatId { get; set; }
         public Avukat AtananAvukat { get; set; }
 
+        public int? YargiTuruId { get; set; }
+        public YargiTuru YargiTuru { get; set; }
+
+        public int? MahkemeId { get; set; }
+        public Mahkeme Mahkeme { get; set; }
+
         public int? DurusmaId { get; set; }
         public ICollection<Durusma> Durusmalar { get; set; }
 

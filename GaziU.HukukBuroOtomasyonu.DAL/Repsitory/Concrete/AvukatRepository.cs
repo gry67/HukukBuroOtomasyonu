@@ -17,7 +17,7 @@ namespace GaziU.HukukBuroOtomasyonu.DAL.Repsitory.Concrete
 
         public Avukat GetAvukatByLogin(AvukatLoginDto loginData)
         {
-            var avukat = context.Avukatlar.Single(a=> a.TcKimlikNo == loginData.AvukatTcNo && a.Sifre == loginData.Sifre);
+            var avukat = context.Avukatlar.SingleOrDefault(a=> a.TcKimlikNo == loginData.AvukatTcNo && a.Sifre == loginData.Sifre);
             if (avukat!=null)
             {
                 return avukat;
